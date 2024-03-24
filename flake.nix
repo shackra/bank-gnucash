@@ -51,7 +51,9 @@
             git
             nixpkgs-fmt
 
-            (python311.withPackages (ps: with ps; [ python ]))
+            # ⚠ PySide y Shiboken son instalados por Nix, no por poetry
+            (python311.withPackages
+              (ps: with ps; [ python pyside6 shiboken6 pyside2-tools ]))
           ];
 
           LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
