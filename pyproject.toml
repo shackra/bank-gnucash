@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "bank-gnucash"
+version = "0.1.0"
+description = "Ayuda a conciliar estados de cuenta para exportar a GNU Cash"
+authors = ["Jorge Javier Araya Navarro <jorge@esavara.cr>"]
+license = "GPL3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+PySide6 = "^6.6.2"
+poethepoet = "^0.25.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.3.0"
+pytest = "^8.1.1"
+pytest-black = "^0.3.12"
+pyls-isort = "^0.2.2"
+flake8-isort = "^6.1.1"
+isort = "^5.13.2"
+mypy = "^1.9.0"
+pyls-mypy = "^0.1.8"
+pyls-flake8 = "^0.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
