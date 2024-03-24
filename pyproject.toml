@@ -18,9 +18,10 @@ build-backend = "poetry.core.masonry.api"
 mypy_path = "src/stubs"
 
 [[tool.mypy.overrides]]
-module = ["PySide.*"]
+module = ["PySide2.*"]
 ignore_missing_imports = true
 
 [tool.poe.tasks]
 convert-ui = "scripts/convert_ui.sh ./ui ./src/ui"
 mypy = "stubgen -o src/stubs src/ui"
+run = "python app.py"

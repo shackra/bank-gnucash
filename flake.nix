@@ -59,8 +59,8 @@
                 python
 
                 # pyside
-                pyside6
-                shiboken6
+                pyside2
+                shiboken2
                 pyside2-tools
 
                 # desarrollo
