@@ -50,6 +50,7 @@
           packages = with pkgs; [
             git
             nixpkgs-fmt
+            poethepoet
 
             # ⚠ PySide y Shiboken son instalados por Nix, no por poetry
             (python311.withPackages (ps:
@@ -73,10 +74,6 @@
                 python-lsp-black
               ]))
           ];
-
-          shellHook = ''
-            poetry shell
-          '';
         };
       });
     };
