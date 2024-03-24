@@ -52,11 +52,27 @@
             nixpkgs-fmt
 
             # ⚠ PySide y Shiboken son instalados por Nix, no por poetry
-            (python311.withPackages
-              (ps: with ps; [ python pyside6 shiboken6 pyside2-tools ]))
-          ];
+            (python311.withPackages (ps:
+              with ps; [
+                # interprete
+                python
 
-          LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+                # pyside
+                pyside6
+                shiboken6
+                pyside2-tools
+
+                # desarrollo
+                black
+                flake8
+                pytest
+                python-lsp-server
+                pyls-flake8
+                pyls-isort
+                pylsp-mypy
+                python-lsp-black
+              ]))
+          ];
 
           shellHook = ''
             poetry shell
