@@ -14,5 +14,13 @@ poethepoet = "^0.25.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.mypy]
+mypy_path = "src/stubs"
+
+[[tool.mypy.overrides]]
+module = ["PySide.*"]
+ignore_missing_imports = true
+
 [tool.poe.tasks]
 convert-ui = "scripts/convert_ui.sh ./ui ./src/ui"
+mypy = "stubgen -o src/stubs src/ui"
