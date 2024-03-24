@@ -6,6 +6,8 @@ from _typeshed import Incomplete
 class Ui_Form:
     verticalLayout: Incomplete
     information: Incomplete
+    load_rsv: Incomplete
+    line: Incomplete
     bank_name: Incomplete
     currency: Incomplete
     horizontalSpacer: Incomplete
@@ -29,6 +31,7 @@ class Ui_Form:
     verticalLayout_7: Incomplete
     label_6: Incomplete
     comboBox_6: Incomplete
-    statement: Incomplete
+    tableWidget: Incomplete
+    save_statements: Incomplete
     def setupUi(self, Form) -> None: ...
     def retranslateUi(self, Form) -> None: ...

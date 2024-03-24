@@ -22,6 +22,18 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.information = QHBoxLayout()
         self.information.setObjectName(u"information")
+        self.load_rsv = QPushButton(Form)
+        self.load_rsv.setObjectName(u"load_rsv")
+
+        self.information.addWidget(self.load_rsv)
+
+        self.line = QFrame(Form)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.VLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.information.addWidget(self.line)
+
         self.bank_name = QComboBox(Form)
         self.bank_name.setObjectName(u"bank_name")
 
@@ -36,13 +48,9 @@ class Ui_Form(object):
 
         self.information.addItem(self.horizontalSpacer)
 
-        self.initial_balance = QLineEdit(Form)
+        self.initial_balance = QDoubleSpinBox(Form)
         self.initial_balance.setObjectName(u"initial_balance")
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.initial_balance.sizePolicy().hasHeightForWidth())
-        self.initial_balance.setSizePolicy(sizePolicy)
+        self.initial_balance.setDecimals(3)
 
         self.information.addWidget(self.initial_balance)
 
@@ -144,10 +152,22 @@ class Ui_Form(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.statement = QPlainTextEdit(Form)
-        self.statement.setObjectName(u"statement")
+        self.tableWidget = QTableWidget(Form)
+        if (self.tableWidget.columnCount() < 6):
+            self.tableWidget.setColumnCount(6)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setFrameShadow(QFrame.Sunken)
+        self.tableWidget.setRowCount(0)
+        self.tableWidget.setColumnCount(6)
+        self.tableWidget.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget.verticalHeader().setStretchLastSection(False)
 
-        self.verticalLayout.addWidget(self.statement)
+        self.verticalLayout.addWidget(self.tableWidget)
+
+        self.save_statements = QPushButton(Form)
+        self.save_statements.setObjectName(u"save_statements")
+
+        self.verticalLayout.addWidget(self.save_statements)
 
 
         self.retranslateUi(Form)
@@ -157,15 +177,16 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.load_rsv.setText(QCoreApplication.translate("Form", u"Cargar RSV...", None))
         self.bank_name.setPlaceholderText(QCoreApplication.translate("Form", u"Banco", None))
         self.currency.setCurrentText("")
         self.currency.setPlaceholderText(QCoreApplication.translate("Form", u"Moneda", None))
-        self.initial_balance.setText(QCoreApplication.translate("Form", u"?", None))
         self.label.setText(QCoreApplication.translate("Form", u"Fecha", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"N\u00ba Referencia", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"Descripci\u00f3n", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"D\u00e9bitos", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"Cr\u00e9ditos", None))
         self.label_6.setText(QCoreApplication.translate("Form", u"Balance", None))
+        self.save_statements.setText(QCoreApplication.translate("Form", u"Salvar", None))
     # retranslateUi
 
