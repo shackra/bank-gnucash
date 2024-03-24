@@ -30,11 +30,16 @@
         pre-commit-check = pre-commit-hooks.lib.${system}.run {
           src = ./.;
           hooks = {
+            # nix
             nixpkgs-fmt.enable = true;
+            # python
             black.enable = true;
             isort.enable = true;
             mypy.enable = true;
             flake8.enable = true;
+            # shell
+            shfmt.enable = true;
+            shellcheck.enable = true;
           };
         };
       });
