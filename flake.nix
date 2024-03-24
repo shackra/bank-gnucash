@@ -53,6 +53,12 @@
 
             (python311.withPackages (ps: with ps; [ python ]))
           ];
+
+          LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+
+          shellHook = ''
+            poetry shell
+          '';
         };
       });
     };
