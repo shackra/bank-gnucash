@@ -47,6 +47,6 @@ class TabContent(QWidget):
             self,
             self.tr("Load data"),
             self.tr(expanduser("~")),
-            self.tr("Stenway Rows of String Values (*.rsv)"),
+            self.tr("Stenway's Rows of String Values (*.rsv)"),
         )
         print(path_to_file)
