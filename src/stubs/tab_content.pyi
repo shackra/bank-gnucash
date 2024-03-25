@@ -13,24 +13,24 @@ class Ui_Form:
     horizontalSpacer: Incomplete
     initial_balance: Incomplete
     horizontalLayout: Incomplete
-    verticalLayout_2: Incomplete
+    date: Incomplete
     label: Incomplete
-    comboBox: Incomplete
-    verticalLayout_3: Incomplete
+    date_column: Incomplete
+    reference: Incomplete
     label_2: Incomplete
-    comboBox_2: Incomplete
-    verticalLayout_4: Incomplete
+    reference_column: Incomplete
+    description: Incomplete
     label_3: Incomplete
-    comboBox_3: Incomplete
-    verticalLayout_5: Incomplete
+    description_column: Incomplete
+    debit: Incomplete
     label_4: Incomplete
-    comboBox_4: Incomplete
-    verticalLayout_6: Incomplete
+    debit_column: Incomplete
+    credit: Incomplete
     label_5: Incomplete
-    comboBox_5: Incomplete
-    verticalLayout_7: Incomplete
+    credit_column: Incomplete
+    balance: Incomplete
     label_6: Incomplete
-    comboBox_6: Incomplete
+    balance_column: Incomplete
     tableWidget: Incomplete
     save_statements: Incomplete
     def setupUi(self, Form) -> None: ...

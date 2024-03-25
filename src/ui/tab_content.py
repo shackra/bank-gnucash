@@ -35,12 +35,24 @@ class Ui_Form(object):
         self.information.addWidget(self.line)
 
         self.bank_name = QComboBox(Form)
+        self.bank_name.addItem("")
+        self.bank_name.addItem("")
+        self.bank_name.addItem("")
+        self.bank_name.addItem("")
+        self.bank_name.addItem("")
+        self.bank_name.addItem("")
+        self.bank_name.addItem("")
         self.bank_name.setObjectName(u"bank_name")
+        self.bank_name.setEnabled(False)
+        self.bank_name.setEditable(False)
 
         self.information.addWidget(self.bank_name)
 
         self.currency = QComboBox(Form)
+        self.currency.addItem("")
+        self.currency.addItem("")
         self.currency.setObjectName(u"currency")
+        self.currency.setEnabled(False)
 
         self.information.addWidget(self.currency)
 
@@ -59,95 +71,101 @@ class Ui_Form(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.date = QVBoxLayout()
+        self.date.setObjectName(u"date")
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
 
-        self.verticalLayout_2.addWidget(self.label)
+        self.date.addWidget(self.label)
 
-        self.comboBox = QComboBox(Form)
-        self.comboBox.setObjectName(u"comboBox")
+        self.date_column = QComboBox(Form)
+        self.date_column.setObjectName(u"date_column")
+        self.date_column.setEnabled(False)
 
-        self.verticalLayout_2.addWidget(self.comboBox)
+        self.date.addWidget(self.date_column)
 
 
-        self.horizontalLayout.addLayout(self.verticalLayout_2)
+        self.horizontalLayout.addLayout(self.date)
 
-        self.verticalLayout_3 = QVBoxLayout()
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.reference = QVBoxLayout()
+        self.reference.setObjectName(u"reference")
         self.label_2 = QLabel(Form)
         self.label_2.setObjectName(u"label_2")
 
-        self.verticalLayout_3.addWidget(self.label_2)
+        self.reference.addWidget(self.label_2)
 
-        self.comboBox_2 = QComboBox(Form)
-        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.reference_column = QComboBox(Form)
+        self.reference_column.setObjectName(u"reference_column")
+        self.reference_column.setEnabled(False)
 
-        self.verticalLayout_3.addWidget(self.comboBox_2)
+        self.reference.addWidget(self.reference_column)
 
 
-        self.horizontalLayout.addLayout(self.verticalLayout_3)
+        self.horizontalLayout.addLayout(self.reference)
 
-        self.verticalLayout_4 = QVBoxLayout()
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.description = QVBoxLayout()
+        self.description.setObjectName(u"description")
         self.label_3 = QLabel(Form)
         self.label_3.setObjectName(u"label_3")
 
-        self.verticalLayout_4.addWidget(self.label_3)
+        self.description.addWidget(self.label_3)
 
-        self.comboBox_3 = QComboBox(Form)
-        self.comboBox_3.setObjectName(u"comboBox_3")
+        self.description_column = QComboBox(Form)
+        self.description_column.setObjectName(u"description_column")
+        self.description_column.setEnabled(False)
 
-        self.verticalLayout_4.addWidget(self.comboBox_3)
+        self.description.addWidget(self.description_column)
 
 
-        self.horizontalLayout.addLayout(self.verticalLayout_4)
+        self.horizontalLayout.addLayout(self.description)
 
-        self.verticalLayout_5 = QVBoxLayout()
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.debit = QVBoxLayout()
+        self.debit.setObjectName(u"debit")
         self.label_4 = QLabel(Form)
         self.label_4.setObjectName(u"label_4")
 
-        self.verticalLayout_5.addWidget(self.label_4)
+        self.debit.addWidget(self.label_4)
 
-        self.comboBox_4 = QComboBox(Form)
-        self.comboBox_4.setObjectName(u"comboBox_4")
+        self.debit_column = QComboBox(Form)
+        self.debit_column.setObjectName(u"debit_column")
+        self.debit_column.setEnabled(False)
 
-        self.verticalLayout_5.addWidget(self.comboBox_4)
+        self.debit.addWidget(self.debit_column)
 
 
-        self.horizontalLayout.addLayout(self.verticalLayout_5)
+        self.horizontalLayout.addLayout(self.debit)
 
-        self.verticalLayout_6 = QVBoxLayout()
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.credit = QVBoxLayout()
+        self.credit.setObjectName(u"credit")
         self.label_5 = QLabel(Form)
         self.label_5.setObjectName(u"label_5")
 
-        self.verticalLayout_6.addWidget(self.label_5)
+        self.credit.addWidget(self.label_5)
 
-        self.comboBox_5 = QComboBox(Form)
-        self.comboBox_5.setObjectName(u"comboBox_5")
+        self.credit_column = QComboBox(Form)
+        self.credit_column.setObjectName(u"credit_column")
+        self.credit_column.setEnabled(False)
 
-        self.verticalLayout_6.addWidget(self.comboBox_5)
+        self.credit.addWidget(self.credit_column)
 
 
-        self.horizontalLayout.addLayout(self.verticalLayout_6)
+        self.horizontalLayout.addLayout(self.credit)
 
-        self.verticalLayout_7 = QVBoxLayout()
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.balance = QVBoxLayout()
+        self.balance.setObjectName(u"balance")
         self.label_6 = QLabel(Form)
         self.label_6.setObjectName(u"label_6")
 
-        self.verticalLayout_7.addWidget(self.label_6)
+        self.balance.addWidget(self.label_6)
 
-        self.comboBox_6 = QComboBox(Form)
-        self.comboBox_6.setObjectName(u"comboBox_6")
+        self.balance_column = QComboBox(Form)
+        self.balance_column.setObjectName(u"balance_column")
+        self.balance_column.setEnabled(False)
 
-        self.verticalLayout_7.addWidget(self.comboBox_6)
+        self.balance.addWidget(self.balance_column)
 
 
-        self.horizontalLayout.addLayout(self.verticalLayout_7)
+        self.horizontalLayout.addLayout(self.balance)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -178,7 +196,18 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.load_rsv.setText(QCoreApplication.translate("Form", u"Cargar RSV...", None))
+        self.bank_name.setItemText(0, QCoreApplication.translate("Form", u"BAC San Jos\u00e9", None))
+        self.bank_name.setItemText(1, QCoreApplication.translate("Form", u"WINK", None))
+        self.bank_name.setItemText(2, QCoreApplication.translate("Form", u"Binance Earn", None))
+        self.bank_name.setItemText(3, QCoreApplication.translate("Form", u"THORChain Earn", None))
+        self.bank_name.setItemText(4, QCoreApplication.translate("Form", u"Zinli", None))
+        self.bank_name.setItemText(5, QCoreApplication.translate("Form", u"Paypal", None))
+        self.bank_name.setItemText(6, QCoreApplication.translate("Form", u"Wise", None))
+
         self.bank_name.setPlaceholderText(QCoreApplication.translate("Form", u"Banco", None))
+        self.currency.setItemText(0, QCoreApplication.translate("Form", u"CRC", None))
+        self.currency.setItemText(1, QCoreApplication.translate("Form", u"USD", None))
+
         self.currency.setCurrentText("")
         self.currency.setPlaceholderText(QCoreApplication.translate("Form", u"Moneda", None))
         self.label.setText(QCoreApplication.translate("Form", u"Fecha", None))

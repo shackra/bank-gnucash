@@ -32,19 +32,73 @@
      </item>
      <item>
       <widget class="QComboBox" name="bank_name">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="editable">
+        <bool>false</bool>
+       </property>
        <property name="placeholderText">
         <string>Banco</string>
        </property>
+       <item>
+        <property name="text">
+         <string>BAC San José</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>WINK</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Binance Earn</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>THORChain Earn</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Zinli</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Paypal</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Wise</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
       <widget class="QComboBox" name="currency">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="currentText">
         <string/>
        </property>
        <property name="placeholderText">
         <string>Moneda</string>
        </property>
+       <item>
+        <property name="text">
+         <string>CRC</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>USD</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
@@ -72,7 +126,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="date">
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
@@ -81,12 +135,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox"/>
+        <widget class="QComboBox" name="date_column">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QVBoxLayout" name="reference">
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
@@ -95,12 +153,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_2"/>
+        <widget class="QComboBox" name="reference_column">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QVBoxLayout" name="description">
        <item>
         <widget class="QLabel" name="label_3">
          <property name="text">
@@ -109,12 +171,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_3"/>
+        <widget class="QComboBox" name="description_column">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QVBoxLayout" name="debit">
        <item>
         <widget class="QLabel" name="label_4">
          <property name="text">
@@ -123,12 +189,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_4"/>
+        <widget class="QComboBox" name="debit_column">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
+      <layout class="QVBoxLayout" name="credit">
        <item>
         <widget class="QLabel" name="label_5">
          <property name="text">
@@ -137,12 +207,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_5"/>
+        <widget class="QComboBox" name="credit_column">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
+      <layout class="QVBoxLayout" name="balance">
        <item>
         <widget class="QLabel" name="label_6">
          <property name="text">
@@ -151,7 +225,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_6"/>
+        <widget class="QComboBox" name="balance_column">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
