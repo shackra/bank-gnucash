@@ -62,18 +62,11 @@
                 pyside2
                 shiboken2
                 pyside2-tools
-
-                # desarrollo
-                black
-                flake8
-                pytest
-                python-lsp-server
-                pyls-flake8
-                pyls-isort
-                pylsp-mypy
-                python-lsp-black
               ]))
           ];
+          shellHook = ''
+            poetry shell -n
+          '';
         };
       });
     };

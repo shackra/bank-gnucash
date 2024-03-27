@@ -9,6 +9,14 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.11,<3.13"
 poethepoet = "^0.25.0"
+black = "^24.3.0"
+flake8 = "^7.0.0"
+pytest = "^8.1.1"
+python-lsp-server = "^1.10.1"
+pyls-flake8 = "^0.4.0"
+pyls-isort = "^0.2.2"
+pylsp-mypy = "^0.6.8"
+python-lsp-black = "^2.0.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -25,3 +33,9 @@ ignore_missing_imports = true
 convert-ui = "scripts/convert_ui.sh ./ui ./src/ui"
 mypy = "stubgen -o src/stubs src/ui"
 run = "python app.py"
+
+[flake8]
+max-line-length = 88
+
+[black]
+line-length = 88
