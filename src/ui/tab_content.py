@@ -170,17 +170,17 @@ class Ui_Form(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.tableWidget = QTableWidget(Form)
-        if (self.tableWidget.columnCount() < 6):
-            self.tableWidget.setColumnCount(6)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setFrameShadow(QFrame.Sunken)
-        self.tableWidget.setRowCount(0)
-        self.tableWidget.setColumnCount(6)
-        self.tableWidget.horizontalHeader().setStretchLastSection(True)
-        self.tableWidget.verticalHeader().setStretchLastSection(False)
+        self.statements = QTableWidget(Form)
+        if (self.statements.columnCount() < 6):
+            self.statements.setColumnCount(6)
+        self.statements.setObjectName(u"statements")
+        self.statements.setFrameShadow(QFrame.Sunken)
+        self.statements.setRowCount(0)
+        self.statements.setColumnCount(6)
+        self.statements.horizontalHeader().setStretchLastSection(True)
+        self.statements.verticalHeader().setStretchLastSection(False)
 
-        self.verticalLayout.addWidget(self.tableWidget)
+        self.verticalLayout.addWidget(self.statements)
 
         self.save_statements = QPushButton(Form)
         self.save_statements.setObjectName(u"save_statements")

@@ -31,7 +31,7 @@ class Ui_Form:
     balance: Incomplete
     label_6: Incomplete
     balance_column: Incomplete
-    tableWidget: Incomplete
+    statements: Incomplete
     save_statements: Incomplete
     def setupUi(self, Form) -> None: ...
     def retranslateUi(self, Form) -> None: ...
