@@ -52,9 +52,12 @@ class TabContent(QWidget):
         )
 
     def get_new_name(self):
+        current_currency = self.ui.currency.currentText()
+        # cambia el prefijo para initial_balance
+        self.ui.initial_balance.setPrefix(current_currency+" ")
         return "%s %s" % (
             self.ui.bank_name.currentText(),
-            self.ui.currency.currentText(),
+            current_currency,
         )
 
     def rename_tab(self):
