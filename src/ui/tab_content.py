@@ -60,6 +60,11 @@ class Ui_Form(object):
 
         self.information.addItem(self.horizontalSpacer)
 
+        self.label_7 = QLabel(Form)
+        self.label_7.setObjectName(u"label_7")
+
+        self.information.addWidget(self.label_7)
+
         self.initial_balance = QDoubleSpinBox(Form)
         self.initial_balance.setObjectName(u"initial_balance")
         self.initial_balance.setEnabled(False)
@@ -218,6 +223,7 @@ class Ui_Form(object):
 
         self.currency.setCurrentText("")
         self.currency.setPlaceholderText(QCoreApplication.translate("Form", u"Moneda", None))
+        self.label_7.setText(QCoreApplication.translate("Form", u"Balance inicial", None))
         self.label.setText(QCoreApplication.translate("Form", u"Fecha", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"N\u00ba Referencia", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"Descripci\u00f3n", None))
