@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from os.path import expanduser
 from typing import Callable, List
+import decimal
 
 from PySide2.QtCore import QObject
 from PySide2.QtWidgets import QFileDialog, QWidget, QTableWidgetItem
@@ -12,6 +13,7 @@ import re
 class TabContent(QWidget):
     data: List[List[str | None]]
     clean_description_data: List[str | None]
+    calculated_balance_data: List[str | None]
     index_columns: List[str]
 
     def __init__(self, index: int, tabRenameFunc: Callable[[int, str], None]):
@@ -22,6 +24,7 @@ class TabContent(QWidget):
         self.change_tab_name = tabRenameFunc
 
         self.clean_description_data = []
+        self.calculated_balance_data = []
 
         self._wd_columns = [
             self.ui.balance_column,
@@ -50,6 +53,10 @@ class TabContent(QWidget):
         self.ui.description_column.currentIndexChanged.connect(
             self.clean_description_data_on_index_changed
         )
+        self.ui.balance_column.currentIndexChanged.connect(
+            self.balance_on_index_changed
+        )
+        self.ui.initial_balance.valueChanged.connect(self.balance_calculate_each_field)
 
     def get_new_name(self):
         current_currency = self.ui.currency.currentText()
@@ -129,3 +136,56 @@ class TabContent(QWidget):
     def toggle_comboboxes(self, state: bool):
         for column in self._wd_columns:
             column.setEnabled(state)
+
+    def balance_calculate_each_field(self, initial: float):
+        index = self.ui.balance_column.currentIndex() - 1
+        credit_index = self.ui.credit_column.currentIndex() - 1
+        debit_index = self.ui.debit_column.currentIndex() - 1
+
+        if index < 0 or credit_index < 0 or debit_index < 0:
+            return
+
+        self.calculated_balance_data.clear()
+        balance = decimal.Decimal(initial)
+        for row in range(len(self.data)):
+            credit = decimal.Decimal(self.data[row][credit_index])
+            debit = decimal.Decimal(self.data[row][debit_index])
+
+            balance = balance + credit - debit
+            amount = f"{balance:.2f}"
+
+            self.calculated_balance_data.append(amount)
+
+            self.ui.statements.setItem(row, index, QTableWidgetItem(self.tr(amount)))
+
+    def balance_on_index_changed(self, index):
+        # necesitamos debit y credit establecidos
+        if len(self.data) == 0:
+            return
+
+        index = index - 1 # index de Balance
+
+        credit_index = self.ui.credit_column.currentIndex() - 1
+        debit_index = self.ui.debit_column.currentIndex() - 1
+
+        if index < 0 or credit_index < 0 or debit_index < 0:
+            return
+
+        if self.data[0][index] is None or self.data[0][index] == 0:
+            self.enable_initial_balance(False)
+            self.balance_calculate_each_field(self.ui.initial_balance.value())
+            return
+
+        credit = decimal.Decimal(self.data[0][credit_index])
+        debit = decimal.Decimal(self.data[0][debit_index])
+        balance = decimal.Decimal(self.data[0][index])
+
+        prev_balance = balance - credit + debit
+
+        # establece el balance anterior
+        self.enable_initial_balance()
+        self.ui.initial_balance.setValue(float(prev_balance))
+
+    def enable_initial_balance(self, readOnly=True):
+        self.ui.initial_balance.setEnabled(True)
+        self.ui.initial_balance.setReadOnly(readOnly)
