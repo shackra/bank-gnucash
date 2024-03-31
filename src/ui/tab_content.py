@@ -62,7 +62,11 @@ class Ui_Form(object):
 
         self.initial_balance = QDoubleSpinBox(Form)
         self.initial_balance.setObjectName(u"initial_balance")
-        self.initial_balance.setDecimals(3)
+        self.initial_balance.setEnabled(False)
+        self.initial_balance.setDecimals(2)
+        self.initial_balance.setMinimum(-100000000000000000620008645040778319495168.000000000000000)
+        self.initial_balance.setMaximum(100000000000000000620008645040778319495168.000000000000000)
+        self.initial_balance.setSingleStep(0.010000000000000)
 
         self.information.addWidget(self.initial_balance)
 
@@ -174,9 +178,13 @@ class Ui_Form(object):
         if (self.statements.columnCount() < 6):
             self.statements.setColumnCount(6)
         self.statements.setObjectName(u"statements")
+        self.statements.setFrameShape(QFrame.StyledPanel)
         self.statements.setFrameShadow(QFrame.Sunken)
+        self.statements.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.statements.setGridStyle(Qt.SolidLine)
         self.statements.setRowCount(0)
         self.statements.setColumnCount(6)
+        self.statements.horizontalHeader().setCascadingSectionResizes(True)
         self.statements.horizontalHeader().setStretchLastSection(True)
         self.statements.verticalHeader().setStretchLastSection(False)
 
